@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/estilo.css' />
     <title>Document</title>
 </head>
 <body>
@@ -11,12 +12,19 @@
 <section class="main">
     <div class="form-login">
 
-        <h1>ACESSAR CONTA</h1>
+        <h1>CRIAR CONTA </h1>
 
-        <form action="/criar-contas" method="post">
+        <form action="/form-login" method="post">
+                <label for="Nome"> Nome: </label>
             <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+            <label for="Nome"> E-mail: </label>
             <input type="text" name="email" id="email" placeholder="E-mail" autofocus required>
-            
+            <label for="Nome"> CPF : </label>
+            <input type="text" name="cpf" id="cpf" placeholder="CPF" required>
+            <label for="dataNascimento" >Data de nascimento:</label>
+            <input type="date" name="dataNascimento" id="dataNascimento" required>
+            <br>
+            <label for="Nome"> Senha: </label>
             <input type="password" name="senha" id="senha" placeholder="Senha" required>
             <input type="submit" value="cadastrar">
         </form>
