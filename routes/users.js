@@ -7,4 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.post('/',function (req , res ){
+  console.log(req.body)
+  res.redirect('/criar-conta')
+})
+
+
 module.exports = router;
