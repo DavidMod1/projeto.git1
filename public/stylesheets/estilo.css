@@ -11,91 +11,34 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 14px;
-    min-height: -webkit-fill-available;
-}
-
 body {
-    width: 100%;
-   
-    min-height: -webkit-fill-available;
-    background-color: var(--cor-principal);
-    font-family: var(--font-padrao);
-    display: flex;
-   
-    align-items: center;
+  background:rgb(255, 255, 255) ;
+  color: black;
+  font-size: 1rem;;
 }
 
-/*
-input[type='text'], input[type='password']  {
+.conteudo {
+  margin:0 auto;
   width: 100%;
-  height: 3rem;
-  font-family: var(--font-padrao);
-  padding: 5px;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  background-color: rgba(217, 217, 217, 0.36);
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin-top:50px;
+  margin-bottom:50px;
+  background: rgb(15, 52, 54);
+  padding: 55px;
+  border-radius: 12px;
 }
-
- Botão cadastrar Lembrete 
-input[type='submit'] {
-  width: 100%;
-  height: 3rem;
-  color: #fff;
-  font-family: var(--font-padrao);
-  font-size: 1.4rem;
-  font-weight: bold;
-  background-color: var(--cor-principal);
-  border: 0;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
-
-input[type='submit']:hover {
-  cursor: pointer;
-  background-color: #2668a5;
-}
-
-.form-login span a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--cor-textos);
-}
-
-.form-login span a:hover {
-  color: var(--cor-principal);
-}
-
-.new-user {
-  width: 100%;
+.topo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+  justify-content:space-between;
+  margin-bottom:35px;
 }
 
-.new-user h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
+.topo input {
+  width: 350px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgb(10, 117, 85);
+  font-size: 1.2rem;
+  background: #191818;
+  color:#fff;
 }
-
-
-.new-user button {
-  width: 100%;
-  height: 2.5rem;
-  font-family: var(--font-padrao);
-  padding: 5px;
-  font-weight: 700;
-  background-color: #fff;
-  color: var(--cor-textos);
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-}
-*/
-
-
-
-

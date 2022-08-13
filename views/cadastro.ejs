@@ -5,19 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/estilo.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
     
-    <section class="main">
-        <div class="form-login">
     
         <h1> Escolha Um caro para Alugar </h1>
-    
+            <div class="conteudo ">
+
             <form action="/cadastro" method="POST">
-                 <div class="nav">
-                 <img src="https://cdn.autopapo.com.br/box/uploads/2021/04/02030041/fiat-marea-prata-bari-de-frente-em-movimento.jpg" alt="" width="100px" height="100px">
-                    <p>ahhshhhsh</p>
+                <div class="topo">
+                    <input type="text" id="pesquisa"
+                    placeholder="Adicione um carro ">
+
+                    <button id="btntarefa">
+                        <i class="fa fa-plus"></i></button>
+                </div>
+
+                <ul id="carro">
+                    <li>
+                        <span class="txtt"> CARRO 1 </span>
+                        <div>
+                            <button class="btnacao">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btnacao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </li> </ul>
+
                     
              </div>
              </div>
