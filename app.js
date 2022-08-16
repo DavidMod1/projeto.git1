@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var cadastroRouter= require('./routes/cadastro');
 const passport = require('passport');
-const LocalStrategy = require('passaport-local').Strategy
+const LocalStrategy = require('passport-local').Strategy
 
 var app = express();
 
@@ -46,6 +46,7 @@ passport.deserializeUser(function( id, done){
     return done(err,null)
   })
 })
+
 
 let StrategyConfig = {
   usernameFild:'username',
