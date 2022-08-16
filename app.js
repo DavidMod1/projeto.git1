@@ -47,6 +47,27 @@ passport.deserializeUser(function( id, done){
   })
 })
 
+let StrategyConfig = {
+  usernameFild:'username',
+  passwordFild:'password'
+}
+passport.use(new LocalStrategy(StrategyConfig,function(username,password,done){
+
+  dao.findByUsername(username)
+  .then(([rows]) =>{
+    if (rows.length == 0) return done (null,false)
+
+    let user = rows[0]
+    if (user.password != password ) return done(null,false)
+
+    else return done(null , user )
+  }).catch(err =>{
+    console.log(err)
+    return done(err,null)
+  })
+
+}))
+
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/criar-conta',usersRouter);
