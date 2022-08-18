@@ -8,6 +8,8 @@ var session = require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var cadastroRouter= require('./routes/cadastro');
+var alunosRouter = require('./routes/alunos');
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy
 
@@ -16,6 +18,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use('/alunos',alunosRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -69,16 +73,16 @@ passport.use(new LocalStrategy(StrategyConfig,function(username,password,done){
 
 }))
 
-let middlewareAutorization = function (req , res, next){
+let middlewareAutorization = function (req , resp, next){
   if (req.isAuthenticated()) return next()
-  else res.redirect('/index')
+  else resp.redirect('/index')
 }
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/criar-conta',usersRouter);
 app.use('/cadastro',middlewareAutorization, cadastroRouter);
-
+//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
