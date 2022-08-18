@@ -58,10 +58,10 @@ passport.use(new LocalStrategy(StrategyConfig,function(username,password,done){
   .then(([rows]) =>{
     if (rows.length == 0) return done (null,false)
 
-    let user = rows[0]
-    if (user.password != password ) return done(null,false)
+    let login = rows[0]
+    if (login.password != password ) return done(null,false)
 
-    else return done(null , user )
+    else return done(null , login )
   }).catch(err =>{
     console.log(err)
     return done(err,null)
@@ -69,10 +69,15 @@ passport.use(new LocalStrategy(StrategyConfig,function(username,password,done){
 
 }))
 
+let middlewareAutorization = function (req , res, next){
+  if (req.isAuthenticated()) return next()
+  else res.redirect('/index')
+}
+
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/criar-conta',usersRouter);
-app.use('/cadastro', cadastroRouter);
+app.use('/cadastro',middlewareAutorization, cadastroRouter);
 
 
 // catch 404 and forward to error handler
