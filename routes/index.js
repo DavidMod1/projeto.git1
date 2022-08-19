@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/' , passport.authenticate('local',{
   successRedirect:'/alunos' ,
-  failureRedirect:'/index'
+  failureRedirect:'/alunos'
 }))
 
 module.exports = router;
