@@ -18,14 +18,14 @@ router.post('/delete', function (request, response){
     .then(([result]) =>{
         console.log(result)
         if (result.affectedRows >0)
-            request.flash('success','aluno excluido com sucesso')
+            request.flash('success','Carro excluido com sucesso')
             else
             request.flash('sucess',` Não foi encontrado no banco aluno com id =${request.body.id}`)
 
          response.redirect('/alunos')
     }).catch(err =>{
         console.log(err)
-        request.flash('error', 'Ocorreu um erro na exclusão do aluno.')
+        request.flash('error', 'Ocorreu um erro na exclusão do Veiculo.')
         response.redirect('/alunos')
     })
 

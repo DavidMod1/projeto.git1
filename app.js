@@ -81,8 +81,8 @@ let middlewareAutorization = function (req , resp, next){
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/criar-conta',usersRouter);
-app.use('/cadastro',middlewareAutorization, cadastroRouter);
-//
+app.use('/cadastro', cadastroRouter);
+//middlewareAutorization,
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
